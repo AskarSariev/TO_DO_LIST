@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="task : ${tasks}">
+    <a th:href="@{/tasks/{id}(id=${task.getId()})}"
+       th:text="${task.getTitle() + ' | ' + task.getTargetDate() + ' | ' + task.isStatus()}">task</a>
+</div>
+
+<br/>
+<hr/>
+
+<!--<a href="/people/new">Create new person</a>-->
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 package ru.sariev.todolistapp.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -12,10 +14,11 @@ public class Task {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "task_name")
+    private String taskName;
 
     @Column(name = "target_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date targetDate;
 
     @Column(name = "status")
@@ -23,8 +26,8 @@ public class Task {
 
     public Task() {}
 
-    public Task(String title, Date targetDate, boolean status) {
-        this.title = title;
+    public Task(String taskName, Date targetDate, boolean status) {
+        this.taskName = taskName;
         this.targetDate = targetDate;
         this.status = status;
     }
@@ -37,12 +40,12 @@ public class Task {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
     public Date getTargetDate() {
@@ -65,7 +68,7 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", taskName='" + taskName + '\'' +
                 ", targetDate=" + targetDate +
                 ", status=" + status +
                 '}';

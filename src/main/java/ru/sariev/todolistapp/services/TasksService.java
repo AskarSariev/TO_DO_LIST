@@ -9,6 +9,7 @@ import ru.sariev.todolistapp.repository.TasksRepository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -25,4 +26,24 @@ public class TasksService {
         return tasksRepository.findAll();
     }
 
+    @Transactional
+    public void save(Task task) {
+        tasksRepository.save(task);
+    }
+
+    public Task findOne(int id) {
+        Optional<Task> foundTask = tasksRepository.findById(id);
+        return foundTask.orElse(null);
+    }
+
+    @Transactional
+    public void update(int id, Task updatedTask) {
+        updatedTask.setId(id);
+        tasksRepository.save(updatedTask);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        tasksRepository.deleteById(id);
+    }
 }

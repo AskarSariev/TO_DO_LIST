@@ -4,15 +4,53 @@
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            vertical-align: center;
+            text-align: center;
+        }
+    </style>
 <body>
 
-<div th:each="task : ${tasks}">
-    <a th:href="@{/tasks/{id}(id=${task.getId()})}"
-       th:text="${task.getTitle() + ' | ' + task.getTargetDate() + ' | ' + task.isStatus()}">task</a>
-</div>
+<h1><center>List of tasks</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>Title</th>
+        <th>Target date</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <div th:each="task : ${tasks}">
+
+            <tr>
+                <td>
+                    <a th:href="@{/tasks/{id}(id=${task.getId()})}"
+                       th:text="${task.getTitle()}">task</a>
+                </td>
+                <td>
+                    <a th:href="@{/tasks/{id}(id=${task.getId()})}"
+                       th:text="${#dates.format(task.getTargetDate(), 'dd-MMM-yyyy')}">task</a>
+                </td>
+                <td>
+                    <a th:href="@{/tasks/{id}(id=${task.getId()})}"
+                       th:text="${task.isStatus()}">task</a>
+                </td>
+                <td>
+                    <input type="submit" value="Edit"/>
+                    <input type="submit" value="Delete"/>
+                </td>
+            </tr>
+
+    </div>
+</table>
 
 <br/>
-<hr/>
+<!--<hr/>-->
 
 <!--<a href="/people/new">Create new person</a>-->
 

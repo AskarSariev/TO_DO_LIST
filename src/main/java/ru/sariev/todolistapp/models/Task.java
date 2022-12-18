@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Task")
-public class Task {
+public class Task implements Comparable<Task> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,6 +46,11 @@ public class Task {
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.targetDate.compareTo(o.targetDate);
     }
 
     public Date getTargetDate() {

@@ -10,6 +10,7 @@ import ru.sariev.todolistapp.repository.TasksRepository;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -23,7 +24,7 @@ public class TasksService {
     }
 
     public List<Task> findAll() {
-        return tasksRepository.findAll();
+        return tasksRepository.findAll().stream().sorted().collect(Collectors.toList());
     }
 
     @Transactional

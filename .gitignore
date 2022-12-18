@@ -18,7 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-D:\Projects\todolistapp\images
+images/
 
 ### NetBeans ###
 /nbproject/private/

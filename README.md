@@ -4,13 +4,13 @@ ToDoListApp is a web task manager.
 
 ### Tools
 
-![Java 11](https://img.shields.io/badge/-Java11-blue?appveyor)
-![Spring](https://img.shields.io/badge/-Spring_Web-success?appveyor)
-![Spring](https://img.shields.io/badge/-Spring_Data_JPA-success?appveyor)
-![Spring](https://img.shields.io/badge/-Spring_Security-success?appveyor)
-![Spring](https://img.shields.io/badge/-PostgreSQL-9cf?appveyor)
-![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-yellow?appveyor)
-![Thymeleaf](https://img.shields.io/badge/-Validation-red?appveyor)
+![Java 11](https://img.shields.io/badge/-Java11-blue??style=plastic&appveyor)
+![Spring](https://img.shields.io/badge/-Spring_Web-success?style=plastic&appveyor)
+![Spring](https://img.shields.io/badge/-Spring_Data_JPA-success?style=plastic&appveyor)
+![Spring](https://img.shields.io/badge/-Spring_Security-success?style=plastic&appveyor)
+![Spring](https://img.shields.io/badge/-PostgreSQL-9cf?style=plastic&appveyor)
+![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-yellow?style=plastic&appveyor)
+![Thymeleaf](https://img.shields.io/badge/-Validation-red?style=plastic&appveyor)
 
 ### Getting started
 

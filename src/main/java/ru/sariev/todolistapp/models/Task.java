@@ -3,6 +3,8 @@ package ru.sariev.todolistapp.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -15,10 +17,12 @@ public class Task implements Comparable<Task> {
     private int id;
 
     @Column(name = "task_name")
+    @NotEmpty(message = "Task shouldn't be empty")
     private String taskName;
 
     @Column(name = "target_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Target date shouldn't be empty")
     private Date targetDate;
 
     @Column(name = "status")

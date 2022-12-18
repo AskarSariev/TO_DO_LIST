@@ -36,6 +36,7 @@
 
     <label for="taskName">Enter title: </label>
     <input type="text" th:field="*{taskName}" id="taskName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('taskName')}" th:errors="*{taskName}">Task name error</div>
 
     <br/>
     <br/>
@@ -43,6 +44,7 @@
 
     <label for="targetDate">Enter target date: </label>
     <input class="dat"  type="date" th:field="*{targetDate}" id="targetDate"/>
+    <div style="color:red" th:if="${#fields.hasErrors('targetDate')}" th:errors="*{targetDate}">Target date error</div>
 
     <br/>
     <br/>

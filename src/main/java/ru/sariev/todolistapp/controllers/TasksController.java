@@ -33,7 +33,10 @@ public class TasksController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("task") Task task) {
+    public String create(@ModelAttribute("task") @Valid Task task, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "tasks/new";
+        }
         tasksService.save(task);
         return "redirect:/tasks";
     }
@@ -45,7 +48,11 @@ public class TasksController {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("task") Task task, @PathVariable("id") int id) {
+    public String update(@ModelAttribute("task")@Valid Task task, BindingResult bindingResult,
+                         @PathVariable("id") int id) {
+        if (bindingResult.hasErrors()) {
+            return "tasks/edit";
+        }
         tasksService.update(id, task);
         return "redirect:/tasks";
     }

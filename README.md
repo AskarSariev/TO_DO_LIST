@@ -40,11 +40,11 @@ ToDoListApp is a web task manager.
 
 1. Before using the application user should registr
 
-   <image src="/images/Registration.jpg" alt="RegistrationPage">
+   <image src="/images/Registration.jpg" alt="RegistrationPage" width="200" height="100">
 
 2. Enter username, password
 
-   <image src="/images/Login.jpg" alt="LoginPage">
+   <image src="/images/Login.jpg" alt="LoginPage" width="200" height="150">
 
 3. Show task list
 
@@ -52,8 +52,8 @@ ToDoListApp is a web task manager.
 
 4. Add task
 
-   <image src="/images/Add.jpg" alt="AddPage">
+   <image src="/images/Add.jpg" alt="AddPage" width="300" height="250">
 
 5. Update task
 
-   <image src="/images/Update.jpg" alt="UpdatePage">
+   <image src="/images/Update.jpg" alt="UpdatePage" width="300" height="250">

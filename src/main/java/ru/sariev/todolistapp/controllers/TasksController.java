@@ -45,7 +45,7 @@ public class TasksController {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("task") @Valid Task task, @PathVariable("id") int id) {
+    public String update(@ModelAttribute("task") Task task, @PathVariable("id") int id) {
         tasksService.update(id, task);
         return "redirect:/tasks";
     }

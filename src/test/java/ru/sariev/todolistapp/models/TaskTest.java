@@ -1,11 +1,7 @@
 package ru.sariev.todolistapp.models;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,15 +18,15 @@ class TaskTest {
         task.setTaskName("JUnit5");
         String expectedTaskName = "JUnit5";
         String actualTaskName = task.getTaskName();
-        Assertions.assertEquals(expectedTaskName, actualTaskName);
+        assertEquals(expectedTaskName, actualTaskName);
     }
 
     @Test
-    void setTaskName() {
-    }
-
-    @Test
-    void compareTo() {
+    void setTaskNameTest() {
+        task.setTaskName("Java");
+        String expectedTaskName = "Java";
+        String actualTaskName = task.getTaskName();
+        assertEquals(expectedTaskName, actualTaskName);
     }
 
     @Test

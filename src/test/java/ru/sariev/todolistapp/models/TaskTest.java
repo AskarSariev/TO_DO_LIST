@@ -3,6 +3,8 @@ package ru.sariev.todolistapp.models;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaskTest {
@@ -30,7 +32,11 @@ class TaskTest {
     }
 
     @Test
-    void getTargetDate() {
+    void getTargetDateTest() {
+        task.setTargetDate(new Date(2023, 01, 01));
+        Date expectedDate = new Date(2023, 01, 01);
+        Date actualDate = task.getTargetDate();
+        assertEquals(expectedDate, actualDate);
     }
 
     @Test

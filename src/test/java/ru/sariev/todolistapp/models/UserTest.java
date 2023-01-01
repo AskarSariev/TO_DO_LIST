@@ -15,7 +15,7 @@ class UserTest {
     }
 
     @Test
-    void getUsername() {
+    void getUsernameTest() {
         user.setUsername("USER");
         String expectedUsername = "USER";
         String actualUsername = user.getUsername();
@@ -23,7 +23,7 @@ class UserTest {
     }
 
     @Test
-    void setUsername() {
+    void setUsernameTest() {
         user.setUsername("ADMIN");
         String expectedUsername = "ADMIN";
         String actualUsername = user.getUsername();
@@ -31,7 +31,7 @@ class UserTest {
     }
 
     @Test
-    void getPassword() {
+    void getPasswordTest() {
         user.setPassword("test_password");
         String expectedPassword = "test_password";
         String actualPassword = user.getPassword();
@@ -39,7 +39,7 @@ class UserTest {
     }
 
     @Test
-    void setPassword() {
+    void setPasswordTest() {
         user.setPassword("test_password");
         String expectedPassword = "test_password";
         String actualPassword = user.getPassword();

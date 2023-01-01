@@ -52,15 +52,6 @@ public class Task implements Comparable<Task> {
         this.taskName = taskName;
     }
 
-    @Override
-    public int compareTo(Task o) {
-        return this.targetDate.compareTo(o.targetDate);
-    }
-
-    public Date getTargetDate() {
-        return targetDate;
-    }
-
     public void setTargetDate(Date targetDate) {
         this.targetDate = targetDate;
     }
@@ -73,6 +64,10 @@ public class Task implements Comparable<Task> {
         this.status = status;
     }
 
+    public Date getTargetDate() {
+        return targetDate;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
@@ -81,5 +76,10 @@ public class Task implements Comparable<Task> {
                 ", targetDate=" + targetDate +
                 ", status=" + status +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.taskName.compareTo(o.taskName);
     }
 }

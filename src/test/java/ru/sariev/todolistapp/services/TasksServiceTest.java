@@ -14,26 +14,38 @@ import static org.mockito.Mockito.when;
 
 class TasksServiceTest {
 
+    private TasksService tasksService;
     private TasksRepository tasksRepository;
 
     @BeforeEach
     void initTaskRepository() {
         tasksRepository = Mockito.mock(TasksRepository.class);
+        tasksService = new TasksService(tasksRepository);
     }
 
     @Test
     void findAllTest() {
         List<Task> testTaskList = List.of(new Task("Java", new Date(2022, 12, 31), true));
-        when(tasksRepository.findAll()).thenReturn(testTaskList);
-        assertEquals(testTaskList, tasksRepository.findAll());
-    }
-
-    @Test
-    void saveTest() {
+        when(tasksService.findAll()).thenReturn(testTaskList);
+        assertEquals(testTaskList, tasksService.findAll());
     }
 
     @Test
     void findOneTest() {
+        Task expectedTask = new Task("Java", new Date(2022, 12, 31), true);
+        int id = 1;
+        expectedTask.setId(id);
+
+        Task actualTask = new Task();
+                tasksRepository.findById(id).get();
+        when(actualTask).thenReturn(expectedTask);
+        assertEquals(expectedTask, actualTask);
+    }
+
+    @Test
+    void saveTest() {
+        Task task = new Task("Java", new Date(2022, 12, 31), true);
+
     }
 
     @Test

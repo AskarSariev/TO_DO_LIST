@@ -2,6 +2,7 @@ package ru.sariev.todolistapp.services;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import ru.sariev.todolistapp.models.Task;
 import ru.sariev.todolistapp.repository.TasksRepository;
@@ -10,17 +11,16 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 class TasksServiceTest {
-
+    
     private TasksService tasksService;
-    private TasksRepository tasksRepository;
 
     @BeforeEach
-    void initTaskRepository() {
-        tasksRepository = Mockito.mock(TasksRepository.class);
-        tasksService = new TasksService(tasksRepository);
+    void initMock() {
+        tasksService = Mockito.mock(TasksService.class);
     }
 
     @Test
@@ -36,10 +36,8 @@ class TasksServiceTest {
         int id = 1;
         expectedTask.setId(id);
 
-        Task actualTask = new Task();
-                tasksRepository.findById(id).get();
-        when(actualTask).thenReturn(expectedTask);
-        assertEquals(expectedTask, actualTask);
+        doReturn(expectedTask).when(tasksService).findOne(id);
+        assertEquals(expectedTask, tasksService.findOne(id));
     }
 
     @Test

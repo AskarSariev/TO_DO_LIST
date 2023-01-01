@@ -33,14 +33,18 @@ class TaskTest {
 
     @Test
     void getTargetDateTest() {
-        task.setTargetDate(new Date(2023, 01, 01));
-        Date expectedDate = new Date(2023, 01, 01);
+        task.setTargetDate(new Date(2022, 12, 31));
+        Date expectedDate = new Date(2022, 12, 31);
         Date actualDate = task.getTargetDate();
         assertEquals(expectedDate, actualDate);
     }
 
     @Test
     void setTargetDate() {
+        task.setTargetDate(new Date(2023, 01, 01));
+        Date expectedDate = new Date(2023, 01, 01);
+        Date actualDate = task.getTargetDate();
+        assertEquals(expectedDate, actualDate);
     }
 
     @Test

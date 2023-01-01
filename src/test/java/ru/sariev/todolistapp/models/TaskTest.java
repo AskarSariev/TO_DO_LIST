@@ -49,13 +49,17 @@ class TaskTest {
 
     @Test
     void isStatus() {
+        task.setStatus(true);
+        boolean expectedStatus = true;
+        boolean actualStatus = task.isStatus();
+        assertEquals(expectedStatus, actualStatus);
     }
 
     @Test
     void setStatus() {
-    }
-
-    @Test
-    void testToString() {
+        task.setStatus(true);
+        boolean expectedStatus = true;
+        boolean actualStatus = task.isStatus();
+        assertEquals(expectedStatus, actualStatus);
     }
 }

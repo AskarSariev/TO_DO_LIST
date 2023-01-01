@@ -8,10 +8,11 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaskTest {
+
     private Task task;
 
     @BeforeEach
-    void initTask() {
+    void createTask() {
         this.task = new Task();
     }
 
@@ -40,7 +41,7 @@ class TaskTest {
     }
 
     @Test
-    void setTargetDate() {
+    void setTargetDateTest() {
         task.setTargetDate(new Date(2023, 01, 01));
         Date expectedDate = new Date(2023, 01, 01);
         Date actualDate = task.getTargetDate();
@@ -48,7 +49,7 @@ class TaskTest {
     }
 
     @Test
-    void isStatus() {
+    void isStatusTest() {
         task.setStatus(true);
         boolean expectedStatus = true;
         boolean actualStatus = task.isStatus();
@@ -56,7 +57,7 @@ class TaskTest {
     }
 
     @Test
-    void setStatus() {
+    void setStatusTest() {
         task.setStatus(true);
         boolean expectedStatus = true;
         boolean actualStatus = task.isStatus();

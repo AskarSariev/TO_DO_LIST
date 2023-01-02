@@ -15,7 +15,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 class TasksServiceTest {
-    
+
     private TasksService tasksService;
 
     @BeforeEach
@@ -43,7 +43,10 @@ class TasksServiceTest {
     @Test
     void saveTest() {
         Task task = new Task("Java", new Date(2022, 12, 31), true);
+        int id = 1;
+        task.setId(id);
 
+        Task expectedTask = task;
     }
 
     @Test

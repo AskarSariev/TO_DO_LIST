@@ -1,8 +1,7 @@
 # TO DO LIST
 
-<image src="/images/Todolist.jpg" alt="RegistrationPage" width="200" height="200">
+<image src="/images/Todolist.jpg" alt="Todolist" width="200" height="200">
 
-<br/>
 <br/>
 
 ToDoListApp is a web task manager. 
